@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>Formulario Clientes</title>
+</head>
+<body>
+<div class="container">
+    <h1>Formulario Cliente</h1>
+    <form action="" th:action="@{/view/add}" th:object="${client}" method="post">
+        <input type="hidden" th:field="*{id}">
+
+        <div class="mb-4">
+            <label>Username:</label>
+            <input type="text" th:field="*{username}" placeholder="Insert username" class="form-control col-4">
+        </div>
+
+        <div class="mb-4">
+            <label>Email:</label>
+            <input type="text" th:field="*{email}" placeholder="Insert email" class="form-control col-4">
+        </div>
+
+        <div class="mb-4">
+            <label>Password:</label>
+            <input type="password" th:field="*{password}" placeholder="Insert password" class="form-control col-4">
+        </div>
+
+        <div class="mb-4">
+            <label>Name:</label>
+            <input type="text" th:field="*{name}" placeholder="Insert name" class="form-control col-4">
+        </div>
+
+        <div class="mb-4">
+            <label>Phone:</label>
+            <input type="text" th:field="*{phone}" placeholder="Insert phone" class="form-control col-4">
+        </div>
+
+        <div class="mb-4">
+            <label>Gender:</label>
+            <select th:field="*{gender}" class="form-control col-4">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label>Birth Date:</label>
+            <input type="datetime-local" th:field="*{birthDate}" placeholder="Select birth date and time" class="form-control col-4">
+        </div>
+
+        <div class="mb-4">
+            <button type="submit" class="btn btn-info col-2">Dale Paco</button>
+        </div>
+    </form>
+    <a th:href="@{/view/clients}">Back to clients list</a>
+</div>
+
+</body>
+</html>
